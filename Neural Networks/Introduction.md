@@ -5,3 +5,5 @@
 The shape of sigmoid activation function follows a positive logrithimic function above 0 and negative log below 0 compared to relu that follows a straight line positive slope after a certain point and is zero before that. 
 
 <b>However,Towards the edges of the sigmoid function the slope falls down to zero that drastically reduces gradient to nearly 0 and in turn reducing learning times when compared to the relu function. </b> 
+
+![Relu](https://miro.medium.com/max/1400/1*XxxiA0jJvPrHEJHD4z893g.png)
