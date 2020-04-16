@@ -1,8 +1,8 @@
-# Getting Started with Binary Classification
+# Getting Started with the Basics
 
-## We will start with how to create a feature matrix out of an image.
+## Working With Matrices
 The images are 64x64x64 pixel matrices that are correspond to single matrices of red, blue and green.
-To unroll it into a feature matrix we need to collect all values of red and simmilarly concatenate blue and green after that until dimension is 12288. 
+To unroll it into a feature matrix we need to collect all values of red and similarly concatenate blue and green after that until dimension is 12288. 
 nx or n = 12288
 
 We use 1 or 0 for true or false in the label.
@@ -29,7 +29,7 @@ We use sigmoid to get the wT x + b to be within 1 and 0
 Also know as error function
 
 Optimization problem if we use 1/2(ypred - y)^2
-We need to find a global maximam 
+We need to find a global maximum 
 
 We use the following log error function: 
 > -(ylog(ypred) + (1-y)log(1-yped))
@@ -42,6 +42,11 @@ This is for a single training sample and the cost measures how your entire taini
 
 > -1/m(SUM((ylog(ypred) + (1-y)log(1-yped)))
 
+```python
+logprobs = np.multiply(-np.log(A3),Y) + np.multiply(-np.log(1 - A3), 1 - Y)
+cost = 1./m * np.sum(logprobs)
+```
+
 ##Gradient Descent:
 Gradient descent is usually done with the help of the cost function and not on the loss or the error function.
 
@@ -51,6 +56,3 @@ But since we use a cost function dependent of both w and b as Ypred depends on w
 > w:= w - alpha d(J(w,b))/dw  Where the derivate is a partial derivate of J(w,b) with respect to w
 > b:= w - alpha d(J(w,b))/db 
 
-
-
->
